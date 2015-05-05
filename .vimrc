@@ -98,7 +98,7 @@ au BufRead,BufNewFile *.{go}   set filetype=go
 au BufRead,BufNewFile *.{js}   set filetype=javascript
 "rkdown to HTML  
 nmap md :!~/.vim/markdown.pl % > %.html <CR><CR>
-nmap fi :!firefox %.html & <CR><CR>
+nmap fi :!google-chrome   %.html & <CR><CR>
 nmap \ \cc
 vmap \ \cc
 
@@ -215,13 +215,13 @@ func! CompileRunGcc()
 	elseif &filetype == 'python'
 		exec "!time python2.7 %"
     elseif &filetype == 'html'
-        exec "!firefox % &"
+        exec "!google-chrome   % &"
     elseif &filetype == 'go'
 "        exec "!go build %<"
         exec "!time go run %"
     elseif &filetype == 'mkd'
         exec "!~/.vim/markdown.pl % > %.html &"
-        exec "!firefox %.html &"
+        exec "!google-chrome   %.html &"
 	endif
 endfunc
 "C,C++的调试
